@@ -1,0 +1,38 @@
+{
+    "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+    "landingPage": "\/wp-admin\/plugins.php",
+    "preferredVersions": {
+        "php": "8.2",
+        "wp": "latest"
+    },
+    "phpExtensionBundles": [
+        "light"
+    ],
+    "features": {
+        "networking": true
+    },
+    "steps": [
+        {
+            "step": "installPlugin",
+            "pluginZipFile": {
+                "resource": "url",
+                "url": "https:\/\/downloads.wordpress.org\/plugin\/wp-edit-homepage.1.1.zip"
+            },
+            "options": {
+                "activate": true
+            }
+        },
+        {
+            "step": "setSiteOptions",
+            "options": {
+                "show_on_front": "page",
+                "page_on_front": 2
+            }
+        },
+        {
+            "step": "login",
+            "username": "admin",
+            "password": "password"
+        }
+    ]
+}
